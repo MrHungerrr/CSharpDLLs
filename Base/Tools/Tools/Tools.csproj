@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Single\**" />
+    <EmbeddedResource Remove="Single\**" />
+    <None Remove="Single\**" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{94B3CBFD-D956-4596-A3A1-24450DB881F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnityGOAP</RootNamespace>
+    <AssemblyName>UnityGOAP</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Serializators">
+      <HintPath>..\..\..\Tools\Serializators\Serializators\bin\Release\netstandard2.1\Serializators.dll</HintPath>
+    </Reference>
+    <Reference Include="Structures, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Structures\Structures\bin\Release\netstandard2.1\Structures.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tools">
+      <HintPath>..\..\..\Base\Tools\Tools\bin\Release\netstandard2.1\Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\Programs\Unity\Editors\2020.1.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Programs\Unity\Editors\2020.1.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GOAP\Action\GOAPAction.cs" />
+    <Compile Include="GOAP\Action\IGOAPAction.cs" />
+    <Compile Include="GOAP\Action\IGOAPReadOnlyAction.cs" />
+    <Compile Include="GOAP\Cost\Base\BaseCost.cs" />
+    <Compile Include="GOAP\Cost\Base\BaseCostComparer.cs" />
+    <Compile Include="GOAP\Cost\GOAPCostSerializer.cs" />
+    <Compile Include="GOAP\Cost\IGOAPCost.cs" />
+    <Compile Include="GOAP\Cost\IGOAPCostComparer.cs" />
+    <Compile Include="GOAP\Main\GOAPActionsManager.cs" />
+    <Compile Include="GOAP\Main\GOAPBlanksManager.cs" />
+    <Compile Include="GOAP\Main\GOAPGoalsManager.cs" />
+    <Compile Include="GOAP\Main\GOAPIO.cs" />
+    <Compile Include="GOAP\Plan\GOAPPlanBuilder.cs" />
+    <Compile Include="GOAP\Plan\GOAPPlaner.cs" />
+    <Compile Include="GOAP\State\GOAPState.cs" />
+    <Compile Include="GOAP\State\GOAPStateContext.cs" />
+    <Compile Include="GOAP\State\Storage\GOAPStateSingle.cs" />
+    <Compile Include="GOAP\State\Storage\GOAPStateStorage.cs" />
+    <Compile Include="GOAP\State\Storage\IGOAPStateReadOnlySingle.cs" />
+    <Compile Include="GOAP\State\Storage\IGOAPStateReadOnlyStorage.cs" />
+    <Compile Include="GOAP\State\Storage\IGOAPStateSingle.cs" />
+    <Compile Include="GOAP\State\Storage\IGOAPStateStorage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
